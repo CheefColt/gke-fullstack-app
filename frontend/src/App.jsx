@@ -4,8 +4,9 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch("http://backend-service:5000/hello")
+    fetch("http://35.222.98.86:8080/api")
       .then(res => res.json())
+      
       .then(data => setMessage(data.message));
   }, []);
 
