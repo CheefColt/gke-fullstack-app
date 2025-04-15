@@ -16,7 +16,7 @@ spec:
         - name: backend
           image: us-central1-docker.pkg.dev/crafty-plateau-456816-g5/gke-docker-repo/backend:latest
           ports:
-            - containerPort: 5000
+            - containerPort: 8080  # ✅ changed from 5000 to 8080
 ---
 apiVersion: v1
 kind: Service
@@ -27,5 +27,5 @@ spec:
   selector:
     app: backend
   ports:
-    - port: 5000
-      targetPort: 5000
+    - port: 8080           # ✅ changed from 5000 to 8080
+      targetPort: 8080     # ✅ changed from 5000 to 8080
